@@ -50,7 +50,6 @@
                     <th>Tình trạng</th>
                     <th>Chi tiết</th>
                     <th>Xem trang tổ chức</th>
-                    <th>Danh sách tình nguyện viên</th>
                     <th>Hủy đăng ký</th>
                 </tr>
             </thead>
@@ -63,12 +62,12 @@
                         <td>@hoatDong.Thoigianbatdau</td>
                         <td>@hoatDong.Thoigianketthuc</td>
                         <td>@hoatDong.Tinhtrang</td>
-                        <td><a href="https://localhost:7131/Canhan/Chitiethoatdongcanhan?idhd=@hoatDong.Idhoatdong">Chi tiết</a></td>
-                        <td>@hoatDong.Idtochuc</td>
-                        <td>Xem</td>
+                        <td><a href="https://localhost:7131/Canhan/Chitiethoatdongcanhan?idhd=@hoatDong.Idhoatdong">Chi tiết</a></td>                       
+                        <td><a href="https://localhost:7131/Canhan/Hienthithongtintochuc?idtc=@hoatDong.Idtochuc">Xem</a></td>
                         <td>
-                        <input type="hidden" class="IdhoatdongHuy" name="IdhoatdongHuy" value="@hoatDong.Idhoatdong" />
-                         <button type="submit" name="action" value="cancel" class="huy">X</button>
+
+                                    <a class ="huy" href="@Url.Action("Huydangky", "Canhan", new { IdhoatdongHuy = hoatDong.Idhoatdong })">X </a>
+                        
                                 </td>
                     </tr>
 
@@ -227,7 +226,7 @@
         top: 1000px;
     }
     .huy{
-        font-size:30px;
+        font-size:20px;
         color:red;
        
     }
