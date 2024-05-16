@@ -1,0 +1,110 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCanhan.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Hoạt động cá nhân</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Baloo:wght@400&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter Da 2:wght@400&display=swap" />
+</head>
+<body>
+    <div class="container">
+        <button class="baocao">Báo cáo vi phạm</button>
+        <div class="retanglecanhan"></div>
+        <label class="ten" name="Ten ">@ViewBag.Ten</label>
+        <label class="thongtin">
+            Thông tin liên hệ : <br />
+            Email: @ViewBag.Email <br />
+            Số điện thoại: @ViewBag.SDT<br />
+            Địa chỉ: @ViewBag.DC<br />
+            Giới tính: @ViewBag.GT<br />
+            Năm sinh: @ViewBag.NS<br />
+        </label>
+        <label class="dtgd">Đã tham gia được </label>
+        <label class="hd">Hoạt động</label>
+        <label class="sohoatdong" name="sohoatdong">@ViewBag.sohoatdong</label>
+    </div>
+</body>
+</html>
+<style>
+    .container {
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative; /* Cần thiết để sử dụng position absolute cho các phần tử con */
+        height: 1000px;
+        width: 1440px;
+    }
+
+    .retanglecanhan {
+        position: absolute;
+        left: 0px;
+        top: 185px;
+        width: 1440px;
+        height: 300px;
+        background: linear-gradient(180deg, rgba(77, 227, 119, 0.36), #fff);
+    }
+
+    .baocao {
+        position: absolute;
+        left: 1124px;
+        top: 145px;
+        width: 270px;
+        height: 33px;
+        font-size: 20px;
+        color: red;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+
+    .ten {
+        position: absolute;
+        left: 194px;
+        top: 210px;
+        font-size: 30px;
+        font-family: Baloo;
+    }
+
+    .thongtin {
+        position: absolute;
+        left: 85px;
+        top: 270px;
+        font-size: 16px;
+        font-family: Inter;
+    }
+
+    .dtgd {
+        position: absolute;
+        left: 835px;
+        top: 299px;
+        font-size: 20px;
+        font-family: Baloo;
+    }
+
+    .hd {
+        position: absolute;
+        left: 1137px;
+        top: 299px;
+        font-size: 20px;
+        font-family: Baloo;
+    }
+
+    .sohoatdong {
+        position: absolute;
+        left: 1021px;
+        top: 289px;
+        font-size: 30px;
+        font-family: Baloo;
+    }
+</style>
+
+

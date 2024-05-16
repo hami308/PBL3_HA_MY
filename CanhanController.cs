@@ -104,28 +104,7 @@ namespace PBL3_QLHDTN.Controllers
                 
                 return View(ketqua);
             }
-           /* if (action == "cancel")
-            {
-                int? userID = HttpContext.Session.GetInt32("UserID");
-                Huydangky(IdhoatdongHuy);
-                var ketqua = (from tt in db.QuanlyTghds
-                              join mt in db.MotaHds on tt.Idhoatdong equals mt.Idhoatdong
-                              join hd in db.Hoatdongs on tt.Idhoatdong equals hd.Idhoatdong
-                              where tt.Idcanhan == userID
-                              select new HoatdongcanhanViewModel
-                              {
-                                  Idhoatdong = tt.Idhoatdong,
-                                  Idtochuc = IdhoatdongHuy,
-                                  Tenhoatdong = mt.Tenhoatdong,
-                                  Thoigiandangky = tt.Thoigiandangky,
-                                  Thoigianbatdau = mt.Tgbdchinhsua == null ? mt.Thoigianbatdau : mt.Tgbdchinhsua,
-                                  Thoigianketthuc = mt.Tgktchinhsua == null ? mt.Thoigiaketthuc : mt.Tgktchinhsua,
-                                  Tinhtrang = Gettinhtrang(tt)
-                              }).ToList();
-                
-                return View(ketqua);
-            }*/
-            
+          
             return Hoatdongcanhan();
         }
         public IActionResult Huydangky(int Idhoatdonghuy)
