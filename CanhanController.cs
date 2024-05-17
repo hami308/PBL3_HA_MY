@@ -17,8 +17,60 @@ namespace PBL3_QLHDTN.Controllers
         }
         public IActionResult Chinhsuathongtincanhan()
         {
+            int? userID = HttpContext.Session.GetInt32("UserID");
+            var u = db.Canhans.Where(model => model.Idcanhan.Equals(userID)).Select(model => new { Ten = model.Ten, Email = model.Email, Sdt = model.Sdt, Diachi = model.Diachi, Gioitinh = model.Gioitinh, Namsinh = model.Namsinh }).FirstOrDefault();
 
+            if (u != null)
+            {
+                ViewBag.Ten = u.Ten.ToString();
+                ViewBag.Email = u.Email.ToString();
+                ViewBag.SDT = u.Sdt.ToString();
+                ViewBag.DC = u.Diachi.ToString();
+                if (u.Gioitinh == true)
+                {
+                    ViewBag.GT = "Nữ";
+                }
+                else
+                {
+                    ViewBag.GT = "Nam";
+                    
+                }
+                ViewBag.NS = u.Namsinh.ToString();
+            }          
             return View();
+           
+        }
+        [HttpPost]
+        public IActionResult Chinhsuathongtincanhan(string hoTen, string soDienThoai, string email, string diaChi, string gioiTinh)
+        {
+            int? userId = HttpContext.Session.GetInt32("UserID") ;
+
+            if (userId != 0)
+            {
+                var user = db.Canhans.FirstOrDefault(u => u.Idcanhan == userId);
+
+                if (user != null)
+                {
+                    user.Ten = hoTen;
+                    user.Diachi = diaChi;
+                    user.Sdt = soDienThoai;
+                    user.Email = email;
+                    if (gioiTinh=="Nữ")
+                    { 
+                        user.Gioitinh = true;
+                    }
+                    else
+                    {
+                        user.Gioitinh = false;
+                    }
+                    db.SaveChanges();
+
+                    return RedirectToAction("Chinhsuathongtincanhan");
+                }
+            }
+
+            return RedirectToAction("Chinhsuathongtincanhan");
+
         }
         public IActionResult Doimatkhau()
         {

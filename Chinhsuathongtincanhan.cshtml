@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCanhan.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Hoạt động cá nhân</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Baloo:wght@400&display=swap" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter Da 2:wght@400&display=swap" />
+</head>
+<body>
+    <form method="post">
+        <div class="container"> 
+            <label class="lb1">Chỉnh sửa thông tin cá nhân</label>
+            <div class="thongtincanhan">
+                <label for="hoTen">Họ và tên:</label>
+                <input type="text" id="hoTen" name="hoTen" value="@ViewBag.Ten" required><br><br>
+                <label for="soDienThoai">Số điện thoại:</label>
+                <input type="text" id="soDienThoai" name="soDienThoai" value="@ViewBag.SDT" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="@ViewBag.Email" required><br><br>
+                <label for="diaChi">Địa chỉ:</label>
+                <input type="text" id="diaChi" name="diaChi" value="@ViewBag.DC" required><br><br>
+                <label for="gioiTinh">Giới tính:</label>
+                <select id="gioiTinh" name="gioiTinh">
+                    @if (ViewBag.GT == "Nam")
+                    {
+                        <option value="Nam" selected >Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    }
+                    else if (ViewBag.GT == "Nữ")
+                    {
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ" selected>Nữ</option>
+                    }
+                    else
+                    {
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    }
+                </select><br><br>
+
+                <button type="submit">Lưu thay đổi</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+<style>
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .lb1 {
+        font-size: 20px;
+        font-weight: bold;
+       font-family:Inter;
+       padding-top:0px;
+        padding-left: 110px; 
+        text-align: center;
+    }
+
+    .thongtincanhan label {
+        font-weight: bold;
+        color: #666;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .thongtincanhan input[type="text"],
+    .thongtincanhan input[type="email"],
+    .thongtincanhan select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .thongtincanhan select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: transparent;
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px;
+    }
+
+    .thongtincanhan button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+        .thongtincanhan button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+
+

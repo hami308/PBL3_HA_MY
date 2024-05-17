@@ -59,16 +59,14 @@
                     <tr>
                         <td>@hoatDong.Tenhoatdong</td>
                         <td>@hoatDong.Thoigiandangky</td>
-                        <td>@hoatDong.Thoigianbatdau</td>
+                         <td>@hoatDong.Thoigianbatdau</td>
                         <td>@hoatDong.Thoigianketthuc</td>
                         <td>@hoatDong.Tinhtrang</td>
                         <td><a href="https://localhost:7131/Canhan/Chitiethoatdongcanhan?idhd=@hoatDong.Idhoatdong">Chi tiết</a></td>                       
                         <td><a href="https://localhost:7131/Canhan/Hienthithongtintochuc?idtc=@hoatDong.Idtochuc">Xem</a></td>
                         <td>
-
-                                    <a class ="huy" href="@Url.Action("Huydangky", "Canhan", new { IdhoatdongHuy = hoatDong.Idhoatdong })">X </a>
-                        
-                                </td>
+                        <a class ="huy" href="@Url.Action("Huydangky", "Canhan", new { IdhoatdongHuy = hoatDong.Idhoatdong })">X </a>                    
+                        </td>
                     </tr>
 
                 }
@@ -228,7 +226,7 @@
     .huy{
         font-size:20px;
         color:red;
-       
+        text-decoration: none;
     }
   /*  .Huydangky {
         position: absolute;
